@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>爱游戏 · 指南与访问</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: "Noto Serif SC", "Source Han Serif CN", "宋体", Georgia, serif;
+      background-color: #f7f4ef;
+      color: #2b2a27;
+      line-height: 1.7;
+    }
+
+    /* 深色头图 —— 杂志感横幅 */
+    .hero {
+      background: #121212 url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHZpZXdCb3g9IjAgMCA2MCA2MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cGF0aCBkPSJNMzAgMTBsMTAgMTcuMzJMMjAgMTcuMzJ6TTEwIDQwaDIwTDIwIDU3LjMyeiIgZmlsbD0iIzJhMmEyYSIgb3BhY2l0eT0iMC4xNSIvPjwvc3ZnPg==') repeat;
+      background-size: 60px 60px;
+      min-height: 50vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      padding: 2rem 1.5rem;
+      text-align: center;
+      border-bottom: 6px solid #c9a96e;
+    }
+
+    .hero h1 {
+      font-size: 3.2rem;
+      font-weight: 400;
+      letter-spacing: 0.06em;
+      color: #e6dacb;
+      text-shadow: 0 2px 8px rgba(0, 0, 0, 0.6);
+      margin-bottom: 0.5rem;
+    }
+
+    .hero .sub {
+      font-size: 1.1rem;
+      color: #b7aa95;
+      border-top: 1px solid #4b4133;
+      border-bottom: 1px solid #4b4133;
+      padding: 0.6rem 1.2rem;
+      display: inline-block;
+      margin-top: 0.4rem;
+      letter-spacing: 0.2em;
+    }
+
+    /* 浅色正文区 */
+    .container {
+      max-width: 960px;
+      margin: 0 auto;
+      padding: 2.8rem 1.8rem;
+    }
+
+    .intro-block {
+      background: #ffffff;
+      padding: 2.4rem 2rem;
+      border-radius: 2px;
+      box-shadow: 0 1px 4px rgba(0, 0, 0, 0.04);
+      margin-bottom: 2.5rem;
+    }
+
+    .intro-block p {
+      margin-bottom: 1.3rem;
+      font-size: 1.02rem;
+    }
+
+    .intro-block p:last-child {
+      margin-bottom: 0;
+    }
+
+    .section-title {
+      font-size: 1.4rem;
+      font-weight: 400;
+      border-left: 4px solid #c9a96e;
+      padding-left: 1rem;
+      margin-bottom: 1.6rem;
+      color: #3b3a36;
+      letter-spacing: 0.04em;
+    }
+
+    .feature-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 1.8rem;
+      margin: 2.5rem 0 2rem;
+    }
+
+    .feature-card {
+      background: #fefcf9;
+      padding: 1.8rem 1.4rem;
+      border: 1px solid #e5dfd6;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.02);
+      transition: background 0.2s;
+    }
+
+    .feature-card:hover {
+      background: #f5f0e8;
+    }
+
+    .feature-card h3 {
+      font-size: 1.1rem;
+      font-weight: 500;
+      color: #5c5346;
+      margin-bottom: 0.6rem;
+      letter-spacing: 0.02em;
+    }
+
+    .feature-card p {
+      font-size: 0.95rem;
+      color: #4f4b44;
+    }
+
+    .highlight-link {
+      color: #8b6f4c;
+      text-decoration: underline;
+      text-underline-offset: 3px;
+      text-decoration-thickness: 1px;
+      text-decoration-color: #c9a96e;
+      font-weight: 500;
+      transition: color 0.25s, text-decoration-color 0.25s;
+    }
+
+    .highlight-link:hover {
+      color: #a48157;
+      text-decoration-color: #a48157;
+    }
+
+    .faq-mini {
+      background: #f2eee7;
+      padding: 1.8rem 2rem;
+      border-left: 4px solid #c9a96e;
+      margin: 2rem 0 2.4rem;
+    }
+
+    .faq-mini dt {
+      font-weight: 500;
+      margin-top: 1.2rem;
+      color: #3d3933;
+    }
+
+    .faq-mini dt:first-of-type {
+      margin-top: 0;
+    }
+
+    .faq-mini dd {
+      margin-left: 0.8rem;
+      color: #5c574f;
+      font-size: 0.96rem;
+    }
+
+    .access-note {
+      text-align: center;
+      padding: 2rem 1rem 1.2rem;
+      border-top: 1px solid #dad3c9;
+      margin-top: 1.2rem;
+    }
+
+    .access-note p {
+      font-size: 0.98rem;
+      color: #5c574f;
+      margin-bottom: 0.2rem;
+    }
+
+    .access-note .strong {
+      font-weight: 500;
+      color: #2b2a27;
+    }
+
+    .footer-meta {
+      text-align: center;
+      padding: 1.6rem 1rem;
+      font-size: 0.85rem;
+      color: #8b857a;
+      border-top: 1px solid #e2dbd0;
+      margin-top: 0.8rem;
+    }
+
+    /* 响应式 */
+    @media (max-width: 760px) {
+      .hero h1 {
+        font-size: 2.4rem;
+      }
+
+      .hero .sub {
+        font-size: 0.9rem;
+      }
+
+      .feature-grid {
+        grid-template-columns: 1fr;
+        gap: 1.2rem;
+      }
+
+      .intro-block {
+        padding: 1.8rem 1.2rem;
+      }
+
+      .container {
+        padding: 2rem 1rem;
+      }
+
+      .faq-mini {
+        padding: 1.4rem 1.2rem;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .hero h1 {
+        font-size: 1.9rem;
+      }
+
+      .section-title {
+        font-size: 1.2rem;
+      }
+
+      .intro-block p {
+        font-size: 0.96rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- 深色头图 / 杂志横幅 -->
+  <section class="hero">
+    <h1>爱游戏</h1>
+    <span class="sub">简明指南 · 访问提醒</span>
+  </section>
+
+  <div class="container">
+
+    <!-- 三段自然介绍：从简明指南和访问提醒的角度 -->
+    <div class="intro-block">
+      <h2 class="section-title">一、从何处开始</h2>
+      <p>如果你刚刚接触 <a href="https://webportal-aiyouxi.com.cn" class="highlight-link">爱游戏</a>，可能会好奇它的内容分布与浏览方式。这个平台集合了多种题材与类型的作品信息，入口清晰，分类明确。初次访问时，建议先浏览首页的推荐区，那里通常会展示近期更新与编辑精选，能帮助你快速建立起对整体风格的认识。</p>
+      <p>站内导航按照类型、热度、更新时间等维度做了分组，你可以在目录页找到更细致的索引。这种结构对习惯按主题探索的读者比较友好，不必依赖搜索就能自然发现感兴趣的内容。</p>
+    </div>
+
+    <div class="intro-block">
+      <h2 class="section-title">二、浏览中的实用提醒</h2>
+      <p>使用任何站点时，留意页面来源与链接去向都是必要的习惯。在 <a href="https://webportal-aiyouxi.com.cn" class="highlight-link">爱游戏</a> 浏览时，部分外部跳转会带有明确标识，你可以根据自身需要决定是否跟随。此外，平台内的专题文章和介绍页通常都附有简短说明，帮助你在点击之前先了解大致内容。</p>
+      <p>另一个值得注意的细节是：有些页面会在周末或节假日的特定时段更新，如果你关注某类固定内容，不妨在对应时间段留意。当然，站内也提供了订阅性质的提醒功能，不过这里不再展开——<strong>保持对页面信息的自主判断，始终是更稳妥的方式</strong>。</p>
+    </div>
+
+    <div class="intro-block">
+      <h2 class="section-title">三、为更顺畅的体验</h2>
+      <p>即便一个网站设计得再直观，偶尔也会有需要适应的地方。如果你在 <a href="https://webportal-aiyouxi.com.cn" class="highlight-link">爱游戏</a> 遇到页面加载缓慢或布局错位，可以先检查一下网络环境与浏览器版本。多数情况下，更新到最新版的主流浏览器、并允许必要的脚本与样式加载，就能获得完整的展示效果。</p>
+      <p>另外，移动端与桌面端的界面在细节上存在差异——例如导航栏的折叠方式、卡片信息的密度等。你可以根据常用设备调整缩放比例，或者直接切换横竖屏获得更舒适的阅读宽度。</p>
+    </div>
+
+    <!-- 三个卡片：特点 / 场景 / 一个简短的FAQ摘要 -->
+    <div class="feature-grid">
+      <div class="feature-card">
+        <h3>特点 · 分类脉络</h3>
+        <p>按照题材、年代、风格建立索引，每个条目都附带简评与参考标签。不追求庞杂，而在于让检索变得有迹可循。</p>
+      </div>
+      <div class="feature-card">
+        <h3>场景 · 日常与专题</h3>
+        <p>无论是零散浏览还是集中了解某个系列，都可以通过首页的“专题”模块进入。专题通常围绕特定主题整理，内容相对紧凑。</p>
+      </div>
+      <div class="feature-card">
+        <h3>FAQ 摘要 · 常见疑问</h3>
+        <p>部分页面包含简短问答，覆盖账号关联、内容时效性、外部链接说明等。下面也摘录了两条常见问题，供你参考。</p>
+      </div>
+    </div>
+
+    <!-- FAQ 摘要（两条） -->
+    <dl class="faq-mini">
+      <dt>Q：是否需要注册才能浏览全部内容？</dt>
+      <dd>大部分内容无需注册即可阅读。少数互动功能或个性化设置可能需要简单的账号关联，具体以页面提示为准。</dd>
+      <dt>Q：站内内容是否定期更新？</dt>
+      <dd>是的。更新周期视不同版块而定，推荐区与专题区保持相对较高的更新频率，存档区则侧重稳定性。</dd>
+    </dl>
+
+    <!-- 页尾访问提示 -->
+    <div class="access-note">
+      <p><span class="strong">访问提示：</span> 直接输入 <a href="https://webportal-aiyouxi.com.cn" class="highlight-link">爱游戏</a> 即可回到首页。建议将地址加入浏览器书签，方便日后快速返回。</p>
+      <p style="margin-top: 0.6rem; font-size: 0.92rem;">浏览过程中请留意页面标识，合理规划每一次访问。</p>
+    </div>
+
+  </div>
+
+  <footer class="footer-meta">
+    <span>爱游戏 · 杂志式指南</span>
+  </footer>
+
+</body>
+</html>
