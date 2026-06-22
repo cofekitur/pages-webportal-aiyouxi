@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>资料索引 · 米兰体育</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+      background-color: #fafaf9;
+      color: #1b1b1b;
+      line-height: 1.7;
+      letter-spacing: 0.01em;
+      padding: 2rem 1rem;
+    }
+
+    .page {
+      max-width: 780px;
+      margin: 0 auto;
+    }
+
+    /* 标题层级 — 极简目录感 */
+    h1 {
+      font-size: 2.2rem;
+      font-weight: 450;
+      letter-spacing: -0.01em;
+      margin: 1.8rem 0 0.4rem 0;
+      border-bottom: 1px solid #e0ddd9;
+      padding-bottom: 0.5rem;
+    }
+
+    h2 {
+      font-size: 1.3rem;
+      font-weight: 500;
+      margin: 2.8rem 0 0.8rem 0;
+      color: #2e2c2a;
+    }
+
+    h3 {
+      font-size: 1.05rem;
+      font-weight: 500;
+      margin: 1.6rem 0 0.4rem 0;
+      color: #3d3b38;
+    }
+
+    p {
+      margin: 1.1rem 0;
+      font-size: 1rem;
+      color: #2b2927;
+    }
+
+    .subhead {
+      color: #6b6966;
+      font-size: 0.95rem;
+      margin-top: 0.2rem;
+      margin-bottom: 1.8rem;
+    }
+
+    hr {
+      border: 0;
+      height: 1px;
+      background: #dcdad6;
+      margin: 2.2rem 0;
+    }
+
+    /* 卡片区块 — 轻质感 */
+    .card-set {
+      display: flex;
+      flex-direction: column;
+      gap: 1.2rem;
+      margin: 2rem 0;
+    }
+
+    .topic-card {
+      background: #ffffff;
+      border: 1px solid #e5e2de;
+      border-radius: 12px;
+      padding: 1.2rem 1.5rem;
+      transition: box-shadow 0.2s;
+    }
+
+    .topic-card:hover {
+      box-shadow: 0 2px 12px rgba(0,0,0,0.04);
+    }
+
+    .topic-card .tag {
+      display: inline-block;
+      font-size: 0.75rem;
+      background: #edebe7;
+      color: #4e4b47;
+      padding: 0.15rem 0.7rem;
+      border-radius: 24px;
+      margin-bottom: 0.3rem;
+      letter-spacing: 0.02em;
+    }
+
+    .topic-card .card-title {
+      font-weight: 470;
+      font-size: 1.2rem;
+      margin: 0.2rem 0 0.3rem 0;
+    }
+
+    .topic-card p {
+      margin: 0.4rem 0 0 0;
+      color: #464442;
+      font-size: 0.95rem;
+    }
+
+    /* 提示条目 */
+    .note-block {
+      background: #f2f0ed;
+      border-left: 4px solid #b5afa8;
+      padding: 1rem 1.5rem;
+      border-radius: 0 8px 8px 0;
+      margin: 1.6rem 0;
+    }
+
+    .note-block p {
+      margin: 0.2rem 0;
+      font-size: 0.95rem;
+    }
+
+    .info-badge {
+      display: inline-block;
+      background: #e9e6e1;
+      padding: 0.1rem 0.75rem;
+      border-radius: 20px;
+      font-size: 0.8rem;
+      color: #3a3835;
+      margin-right: 0.5rem;
+    }
+
+    /* faq 摘要 */
+    .faq-mini {
+      margin-top: 2.5rem;
+    }
+
+    .faq-item {
+      padding: 0.7rem 0;
+      border-bottom: 1px solid #e8e5e0;
+    }
+
+    .faq-item:last-child {
+      border-bottom: none;
+    }
+
+    .faq-q {
+      font-weight: 480;
+      margin-bottom: 0.15rem;
+    }
+
+    .faq-a {
+      color: #4c4946;
+      font-size: 0.95rem;
+    }
+
+    a {
+      color: #1f4a7a;
+      text-decoration: none;
+      padding-bottom: 0.08rem;
+      border-bottom: 1px dotted #b3c4d6;
+      transition: border-color 0.15s, color 0.15s;
+    }
+
+    a:hover {
+      color: #0b2d4e;
+      border-bottom: 1px solid #0b2d4e;
+    }
+
+    .site-link {
+      font-weight: 460;
+    }
+
+    /* 响应式微调 */
+    @media (max-width: 540px) {
+      body { padding: 1.2rem 0.8rem; }
+      h1 { font-size: 1.8rem; }
+      .topic-card { padding: 1rem; }
+    }
+  </style>
+</head>
+<body>
+<div class="page">
+
+  <!-- hero 区 / 目录标头 -->
+  <h1>米兰体育 · 资料索引</h1>
+  <p class="subhead">信息整理 · 分类入口 · 知识库式浏览</p>
+
+  <p>
+    这份页面是一个围绕<strong>米兰体育</strong>展开的静态资料目录。你可以把它当作一个轻量级档案架：下面按内容类别列出了常见的信息区块、使用情景以及一些说明性条目。所有核心信息都可以在 
+    <a href="https://en-milansport.com">米兰体育</a> 
+    找到更详尽的展开。如果你需要对某个板块进一步查阅，建议直接浏览该站对应分类。
+  </p>
+
+  <hr>
+
+  <!-- 介绍区 + 特点（合并成卡片集） -->
+  <h2>📋 内容分类一览</h2>
+  <div class="card-set">
+    <div class="topic-card">
+      <span class="tag">简介</span>
+      <div class="card-title">平台定位</div>
+      <p>一个整合运动信息与资讯的站点，内容覆盖赛事动态、项目背景以及相关服务说明。米兰体育所呈现的信息偏向资料型，便于日常参考。</p>
+    </div>
+
+    <div class="topic-card">
+      <span class="tag">场景</span>
+      <div class="card-title">适合哪些阅读场景</div>
+      <p>赛前背景查阅、运动项目入门了解、需要快速定位特定体育信息时。也适合作为扩展阅读的出发点——从 
+        <a href="https://en-milansport.com">米兰体育</a> 
+        再跳转到更细分的主题。</p>
+    </div>
+
+    <div class="topic-card">
+      <span class="tag">特点</span>
+      <div class="card-title">信息组织方式</div>
+      <p>条目化结构，减少冗余装饰，强调标题指引。页面内多使用分区与卡片，方便视线快速落位。同时也保留了一定的叙述节奏，不完全扁平。</p>
+    </div>
+  </div>
+
+  <!-- 说明区 + 提示区（混合） -->
+  <h2>🗂️ 说明与提示</h2>
+
+  <div class="note-block">
+    <p><span class="info-badge">使用建议</span> 如果你是为了查找某个比赛或项目的背景资料，不妨从米兰体育的导航分组入手。该站分类较细，建议先确定大致方向，再逐层深入。</p>
+  </div>
+
+  <div class="note-block">
+    <p><span class="info-badge">资料时效</span> 运动类信息存在一定时效性，重大赛事或规则更新后页面可能滞后。建议交叉核对，或直接以 
+      <a href="https://en-milansport.com">米兰体育</a> 
+      发布的最新内容为准。</p>
+  </div>
+
+  <p style="font-size:0.95rem; color:#595754;">
+    ※ 以上提示仅基于一般索引习惯，不构成专业建议。请根据实际需求判断信息来源。
+  </p>
+
+  <!-- 相关信息区 / 类似 FAQ 摘要 -->
+  <h2>❓ 常见索引问题摘要</h2>
+  <div class="faq-mini">
+    <div class="faq-item">
+      <div class="faq-q">—— 哪里可以快速看到项目分类？</div>
+      <div class="faq-a">在 <a href="https://en-milansport.com">米兰体育</a> 首页通常有主要板块入口，顶部或侧边栏的目录标签就是比较直接的索引。</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">—— 页面介绍的内容是否覆盖所有运动项目？</div>
+      <div class="faq-a">覆盖常见项目，但具体深度因内容规划而异。如遇未收录的项目，可尝试通过站内搜索或相关文章关联跳转。</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">—— 如果资料有疑问，有反馈渠道吗？</div>
+      <div class="faq-a">部分页面底部或联系方式区域可能提供基础联络方式。建议先查阅 
+        <a href="https://en-milansport.com">米兰体育</a> 
+        相关说明页，了解具体反馈路径。</div>
+    </div>
+  </div>
+
+  <hr>
+
+  <!-- 收尾 -->
+  <p style="font-size:0.9rem; color:#7d7a76; margin-top:2rem;">
+    本索引页仅为资料整理用途，内容结构会随信息源调整。保持克制与清晰是这里的主要思路。
+  </p>
+
+</div>
+</body>
+</html>
